@@ -1,0 +1,11 @@
+# Dev containers for local development and testing
+services:
+  database:
+    container_name: go-sample-db
+    image: postgres
+    ports:
+      - '5432:5432'
+    volumes:
+      - .docker/local-multi-db:/docker-entrypoint-initdb.d
+    env_file:
+      - docker.env
